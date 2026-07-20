@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio - UI/UX Designer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+            <a href="#" class="logo" id="btn-menu">
+                <span class="logo-icon"></span>
+                <span class="logo-text">Meu Portfólio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button class="btn-cta" id="btn-abrir-modal">Vamos Conversar</button>
+    </nav>
+
+    <!-- Modal Contato -->
+    <div class="modal" id="modal-contato" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="btn-fechar-modal" aria-label="Fechar modal">&times;</button>
+            <div class="modal-header">
+                <span class="modal-badge">Contato</span>
+                <h2>Entre em Contato</h2>
+                <p>Fale comigo para discutir seu projeto, orçamento ou ideias.</p>
+            </div>
+            <form id="form-contato" class="form-contato" data-whatsapp="5538984352816">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <input type="tel" name="telefone" placeholder="Ex.: (11) 99999-9999" required>
+                <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit" class="btn primario">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Seção Hero -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge">Designer de Produto Premiado</span>
+                <h1>Olá, sou <span class="destaque">Kauan Felipe</span></h1>
+                <p>Designer de Produto & UI/UX baseado em [Sua Cidade/País]</p>
+                <div class="hero-stats">
+                    <div class="redes-sociais">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="hero-botoes">
+                    <a href="#projetos" class="btn primario">Ver Portfólio <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contato" class="btn secundario">Entre em Contato</a>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <div class="img-wrapper">
+                    <div class="etiqueta">Figma</div>
+                    <div class="etiqueta">Design System</div>
+                    <div class="etiqueta">Site Responsivo</div>
+                    <div class="etiqueta">Design Mobile</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <h2>Como dou vida às ideias</h2>
+                <p>Soluções criativas e funcionais para seu projeto digital</p>
+            </div>
+            <div class="lista-servicos">
+                <div class="servico-item">
+                    <div class="servico-topo">
+                        <span class="numero">01</span>
+                        <h3>UI/UX Design</h3>
+                        <button class="btn-expandir" aria-expanded="false"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <p>Criação de interfaces intuitivas e experiências envolventes. Foco em design centrado no usuário, pesquisa e prototipagem para resultados eficazes.</p>
+                </div>
+                <div class="servico-item ativo">
+                    <div class="servico-topo">
+                        <span class="numero">02</span>
+                        <h3>Design de Sites</h3>
+                        <button class="btn-expandir" aria-expanded="true"><i class="fas fa-times"></i></button>
+                    </div>
+                    <p>Criação de landing pages, sites institucionais, prototipagem e design personalizado. Foco em experiência do usuário, usabilidade e crescimento do seu negócio.</p>
+                </div>
+                <div class="servico-item">
+                    <div class="servico-topo">
+                        <span class="numero">03</span>
+                        <h3>Design de Aplicativos</h3>
+                        <button class="btn-expandir" aria-expanded="false"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <p>Desenvolvimento de interfaces para aplicativos móveis, garantindo uma experiência fluida e intuitiva. Foco em design responsivo e interação do usuário.</p>
+                </div>
+                <div class="servico-item">
+                    <div class="servico-topo">
+                        <span class="numero">04</span>
+                        <h3>Design de Dashboards</h3>
+                        <button class="btn-expandir" aria-expanded="false"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <p>Criação de dashboards interativos e visualizações de dados. Foco em clareza, usabilidade e insights acionáveis para tomada de decisões estratégicas.</p>
+                </div>
+                <div class="servico-item">
+                    <div class="servico-topo">
+                        <span class="numero">05</span>
+                        <h3>Wireframe e Prototipagem</h3>
+                        <button class="btn-expandir" aria-expanded="false"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <p>Desenvolvimento de wireframes e protótipos interativos para validar ideias e fluxos de usuário. Foco em testes de usabilidade e refinamento do design antes do desenvolvimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="projetos">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <h2>Projetos</h2>
+                <p>Uma seleção de trabalhos que refletem minha abordagem criativa e habilidades em design de produto.</p>
+            </div>
+            <div class="lista-projetos">
+                <div class="projeto-item">
+                    <img src="assets/img/projeto1.svg" alt="Projeto 1">
+                    <div class="projeto-conteudo">
+                        <h3>Projeto 1</h3>
+                        <p>Descrição breve do projeto 1, destacando os objetivos e resultados alcançados.</p>
+                    </div>
+                </div>
+                <div class="projeto-item">
+                    <img src="assets/img/projeto2.svg" alt="Projeto 2">
+                    <div class="projeto-conteudo">
+                        <h3>Projeto 2</h3>
+                        <p>Descrição breve do projeto 2, destacando os objetivos e resultados alcançados.</p>
+                    </div>
+                </div>
+                <div class="projeto-item">
+                    <img src="assets/img/projeto3.svg" alt="Projeto 3">
+                    <div class="projeto-conteudo">
+                        <h3>Projeto 3</h3>
+                        <p>Descrição breve do projeto 3, destacando os objetivos e resultados alcançados.</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="container sobre-container">
+            <div class="sobre-imagem">
+                <div class="img-wrapper-pequeno"></div>
+            </div>
+            <div class="sobre-conteudo">
+                <h2>Quem sou eu?</h2>
+                <p>Olá! Sou um designer de produto apaixonado por criar experiências digitais intuitivas, que combinam estética moderna com funcionalidade e resultados para o usuário final.</p>
+                <div class="sobre-tags">
+                    <span>UI Design</span>
+                    <span>UX Research</span>
+                    <span>Figma</span>
+                    <span>Prototipagem</span>
+                </div>
+                <a href="#contato" class="btn primario">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
