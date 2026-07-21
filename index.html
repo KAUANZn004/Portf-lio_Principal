@@ -53,19 +53,20 @@
                 <p>Designer de Produto & UI/UX baseado em [Sua Cidade/País]</p>
                 <div class="hero-stats">
                     <div class="redes-sociais">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/KAUANZn004"><i class="fab fa-github"></i></a>
+                        <a href="mailto:contato.kauanfelipeoli@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/kauanfel_4"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/kauanfos004"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="hero-botoes">
-                    <a href="#projetos" class="btn primario">Ver Portfólio <i class="fas fa-arrow-right"></i></a>
+                    <a href="#projetos" class="btn primario">Ver Projetos<i class="fas fa-arrow-right"></i></a>
                     <a href="#contato" class="btn secundario">Entre em Contato</a>
                 </div>
             </div>
             <div class="hero-imagem">
                 <div class="img-wrapper">
+                    <img src="assets/img/hero.png" alt="Imagem de destaque do portfólio" class="img-destaque">
                     <div class="etiqueta">Figma</div>
                     <div class="etiqueta">Design System</div>
                     <div class="etiqueta">Site Responsivo</div>
@@ -135,27 +136,54 @@
                 <p>Uma seleção de trabalhos que refletem minha abordagem criativa e habilidades em design de produto.</p>
             </div>
             <div class="lista-projetos">
+                
+                <!-- Adicione mais projetos aqui -->
                 <div class="projeto-item">
-                    <img src="assets/img/projeto1.svg" alt="Projeto 1">
+                    <a href="https://kauanzn004.github.io/Meu-Portf-lio/" class="projeto-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto 1">
+                        <img src="assets/img/portfolio.png" alt="Projeto 1">
+                    </a>
                     <div class="projeto-conteudo">
-                        <h3>Projeto 1</h3>
-                        <p>Descrição breve do projeto 1, destacando os objetivos e resultados alcançados.</p>
+                        <h3>Projeto 1 | Primeiro Portfólio</h3>
+                        <p>Arquitetura visual, performance e animação.</p>
                     </div>
                 </div>
                 <div class="projeto-item">
-                    <img src="assets/img/projeto2.svg" alt="Projeto 2">
+                    <a href="https://kauanzn004.github.io/Projeto-Landing-Page-1/" class="projeto-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto 2">
+                        <img src="assets/img/landing_page.png" alt="Projeto 2">
+                    </a>
                     <div class="projeto-conteudo">
-                        <h3>Projeto 2</h3>
+                        <h3>Projeto 2 | Landing Page</h3>
+                        <p>Desenvolvida com foco em UX, performance e design responsivo.</p>
+                    </div>
+                </div>
+                <div class="projeto-item">
+                    <a href="https://kauanzn004.github.io/Projrto-Landing-Page-2/" class="projeto-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto 3">
+                        <img src="assets/img/landing_page_2.png" alt="Projeto 3">
+                    </a>
+                    <div class="projeto-conteudo">
+                        <h3>Projeto 3 | Landing Page</h3>
                         <p>Descrição breve do projeto 2, destacando os objetivos e resultados alcançados.</p>
                     </div>
                 </div>
                 <div class="projeto-item">
-                    <img src="assets/img/projeto3.svg" alt="Projeto 3">
+                    <a href="https://kauanzn004.github.io/Barbearia/" class="projeto-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto 4">
+                        <img src="assets/img/projeto3.svg" alt="Projeto 4">
+                    </a>
                     <div class="projeto-conteudo">
-                        <h3>Projeto 3</h3>
+                        <h3>Projeto 4 | Barbearia SAAS</h3>
                         <p>Descrição breve do projeto 3, destacando os objetivos e resultados alcançados.</p>
                     </div>
                 </div>
+                <div class="projeto-item">
+                    <a href="https://kauanzn004.github.io/Meu-Portf-lio/" class="projeto-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto 5">
+                        <img src="assets/img/" alt="Projeto 5">
+                    </a>
+                    <div class="projeto-conteudo">
+                        <h3>Projeto 5 | Primeiro Portfólio</h3>
+                        <p>Arquitetura visual, performance e animação.</p>
+                    </div>
+                </div>
+                
         </div>
     </section>
 
@@ -163,7 +191,9 @@
     <section id="sobre" class="sobre">
         <div class="container sobre-container">
             <div class="sobre-imagem">
-                <div class="img-wrapper-pequeno"></div>
+                <div class="img-wrapper-pequeno">
+                    <img src="assets/img/hero.png" alt="Imagem sobre mim" class="img-sobre">
+                </div>
             </div>
             <div class="sobre-conteudo">
                 <h2>Quem sou eu?</h2>
@@ -174,10 +204,26 @@
                     <span>Figma</span>
                     <span>Prototipagem</span>
                 </div>
-                <a href="#contato" class="btn primario">Saiba Mais</a>
+                <a href="#modal-sobre" class="btn primario" data-modal="modal-sobre">Mais Sobre Mim</a>
             </div>
         </div>
     </section>
+
+    <!-- Modal Saiba Mais -->
+    <div class="modal" id="modal-sobre" aria-hidden="true">
+        <div class="modal-content modal-content-sobre">
+            <button class="modal-close" id="btn-fechar-modal-sobre" aria-label="Fechar modal">&times;</button>
+            <div class="modal-header">
+                <span class="modal-badge">Sobre Mim</span>
+                <h2>Mais sobre mim</h2>
+                <p>Sou um designer de produto com experiência em UI/UX, focado em criar soluções digitais que encantam os usuários e impulsionam resultados.</p>
+            </div>
+            <div class="modal-body">
+                <p>Tenho trabalhado em diversos projetos, desde aplicativos móveis até plataformas web, sempre buscando entender as necessidades dos usuários e traduzir isso em designs funcionais e esteticamente agradáveis.</p>
+                <p>Minha abordagem envolve pesquisa de usuário, prototipagem rápida e testes de usabilidade para garantir que cada produto final seja intuitivo e eficaz.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>

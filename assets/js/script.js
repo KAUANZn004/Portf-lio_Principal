@@ -56,7 +56,7 @@ document.querySelectorAll('a[href^="#"]').forEach(ancora => {
     ancora.addEventListener('click', function(e) {
         const destino = this.getAttribute('href');
 
-        if (!destino || destino === '#') {
+        if (!destino || destino === '#' || this.hasAttribute('data-modal')) {
             return;
         }
 
@@ -116,52 +116,78 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const modal = document.getElementById('modal-contato');
+    const modalContato = document.getElementById('modal-contato');
     const btnAbrirModal = document.getElementById('btn-abrir-modal');
     const btnFecharModal = document.getElementById('btn-fechar-modal');
     const linksContato = document.querySelectorAll('a[href="#contato"]');
+    const trigersModal = document.querySelectorAll('[data-modal]');
     const formulario = document.getElementById('form-contato');
     const inputTelefone = document.querySelector('input[name="telefone"]');
 
-    const abrirModal = (event) => {
-        if (event) {
-            event.preventDefault();
-        }
+    const abrirModal = (modalId) => {
+        const modal = document.getElementById(modalId);
+        if (!modal) return;
 
-        if (modal) {
-            modal.classList.add('ativo');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-        }
+        modal.classList.add('ativo');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
     };
 
-    const fecharModal = () => {
-        if (modal) {
+    const fecharModal = (modalId = null) => {
+        const modais = modalId ? [document.getElementById(modalId)] : document.querySelectorAll('.modal');
+
+        modais.forEach(modal => {
+            if (!modal) return;
             modal.classList.remove('ativo');
             modal.setAttribute('aria-hidden', 'true');
+        });
+
+        if (!document.querySelector('.modal.ativo')) {
             document.body.style.overflow = '';
         }
     };
 
     if (btnAbrirModal) {
-        btnAbrirModal.addEventListener('click', abrirModal);
+        btnAbrirModal.addEventListener('click', (event) => {
+            event.preventDefault();
+            abrirModal('modal-contato');
+        });
     }
 
     linksContato.forEach(link => {
-        link.addEventListener('click', abrirModal);
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            abrirModal('modal-contato');
+        });
+    });
+
+    trigersModal.forEach(trigger => {
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            abrirModal(trigger.dataset.modal);
+        });
     });
 
     if (btnFecharModal) {
-        btnFecharModal.addEventListener('click', fecharModal);
+        btnFecharModal.addEventListener('click', () => fecharModal('modal-contato'));
     }
 
-    if (modal) {
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                fecharModal();
+    document.querySelectorAll('.modal-close').forEach(botao => {
+        botao.addEventListener('click', () => {
+            const modalPai = botao.closest('.modal');
+            if (modalPai) {
+                fecharModal(modalPai.id);
             }
         });
-    }
+    });
+
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                fecharModal(modal.id);
+            }
+        });
+    });
 
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
@@ -194,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             window.open(`https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`, '_blank');
             formulario.reset();
-            fecharModal();
+            fecharModal('modal-contato');
         });
     }
 });
