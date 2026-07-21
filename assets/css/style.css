@@ -551,6 +551,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    perspective: 1200px;
 }
 .projeto-item {
     background: linear-gradient(180deg, rgba(30, 30, 30, 0.98), rgba(22, 22, 22, 0.98));
@@ -559,6 +560,8 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.06);
     transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     position: relative;
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow;
 }
 
 .projeto-item::before {
@@ -572,7 +575,7 @@ body {
 }
 
 .projeto-item:hover {
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-8px) scale(1.01) rotateY(1deg);
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(42, 65, 182, 0.35);
     border-color: rgba(42, 65, 182, 0.45);
 }

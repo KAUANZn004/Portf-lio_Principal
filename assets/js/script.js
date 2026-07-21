@@ -172,6 +172,39 @@ document.addEventListener('DOMContentLoaded', () => {
         btnFecharModal.addEventListener('click', () => fecharModal('modal-contato'));
     }
 
+    const projetoCards = document.querySelectorAll('.projeto-item');
+
+    projetoCards.forEach(card => {
+        let frameId = null;
+        const maxAngle = 13;
+
+        const resetCard = () => {
+            card.style.transform = '';
+            card.style.boxShadow = '';
+        };
+
+        const animateCard = (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            const rotateY = ((x / rect.width) - 0.5) * maxAngle;
+            const rotateX = -((y / rect.height) - 0.5) * maxAngle;
+
+            card.style.transform = `translateY(-10px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            card.style.boxShadow = '0 28px 55px rgba(0, 0, 0, 0.32)';
+        };
+
+        card.addEventListener('mousemove', (event) => {
+            if (frameId) cancelAnimationFrame(frameId);
+            frameId = requestAnimationFrame(() => animateCard(event));
+        });
+
+        card.addEventListener('mouseleave', () => {
+            if (frameId) cancelAnimationFrame(frameId);
+            resetCard();
+        });
+    });
+
     document.querySelectorAll('.modal-close').forEach(botao => {
         botao.addEventListener('click', () => {
             const modalPai = botao.closest('.modal');
